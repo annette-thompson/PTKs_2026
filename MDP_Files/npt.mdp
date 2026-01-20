@@ -1,0 +1,60 @@
+; Based on Anika's examples on GH
+title                   = NPT equilibration	; Title of run
+
+; Preprocessing
+define                  = -DPOSRES		; position restraints defined in topology
+
+; Run parameters
+integrator              = md			; A leap-frog algorithm for integrating Newton’s equations of motion (Can be changed depending on the system)
+nsteps                  = 33334			; # of time-steps to be taken 33,334 steps * 0.003 ps/step ~= 100 ps
+dt                      = 0.003			; The time step to be taken (If using HMR this should be 3-4 fs) [ps]
+
+; Output control
+nstenergy               = 5000			; save energies every 5.0 ps (For equilibration file sizes will always be small and you may have large changes quickly so this should also be pretty frequent) [steps]
+nstlog                  = 5000			; update log file every 5.0 ps (log files are not that large so updating this frequently is usually a good idea) [steps]
+nstxout-compressed      = 5000			; save coordinates every 5.0 ps (For equilibration file sizes will always be small and you may have large changes quickly so this should also be pretty frequent) [steps]
+
+; Bond parameters
+continuation            = no			; first dynamics run so this is not a continuation of a previous run
+constraint_algorithm    = lincs			; holonomic constraints (This is generally the right choice as it is more stable than SHAKE)
+constraints             = h-bonds		; bonds to H are constrained (This will generally be used)
+lincs_iter              = 1			; accuracy of LINCS (This should be 1 unless you are running in double precision)
+lincs_order             = 4			; Highest order in the expansion of the constraint coupling matrix (This will likely not be changed)
+
+; Neighbor searching and vdW
+nstlist                 = 40			; Frequency to update the neighbor list and long range forces (Can be adjusted for optimization but GROMACS can over-ride the setting too)
+cutoff-scheme           = Verlet		; Generate a pair list with buffering (Verlet is standard so generally does not need changed)
+vdwtype                 = cutoff	
+rlist                   = 0.9			; Cut-off for making neighbor list for short range forces (Should genreally be between 0.9 and 1.0)    
+vdw-modifier            = force-switch		; The LJ (not Buckingham) potential is decreased over the whole range and the forces decay smoothly to zero between rvdw-switch and rvdw
+rvdw                    = 0.9			; long range Van der Waals cut-off [nm]
+rvdw-switch             = 0.88			; Switch distance for force-switch (Should generally be approximately rvdw - 0.02)
+
+; Electrostatics
+coulombtype             = PME			; Treatment of long range electrostatic interactions (PME is standard and does not generally need changed)
+rcoulomb                = 0.9			; long range electrostatic cut-off (Should generally be between 0.9-1.0 -- GROMACS can increase the value based on the simulation) [nm]
+pme_order               = 4			; cubic PME interpolation (Note that on the CPU only values 4 and 5 have SIMD acceleration and GPUs only support the value 4)
+fourierspacing          = 0.12			; grid spacing for FFT (This can be increased to increase performance at the cost of accuracy) [nm]
+
+; Temperature coupling
+tcoupl                  = V-rescale		; modified Berendsen thermostat (This is a good general use thermostat)
+tc-grps                 = System		; This couples the entire system together which is logistically easier than having separate groups which is not likely to increase accuracy
+tau_t                   = 2.0			; time constant, in ps (This can be adjusted, but is generally a good value) [ps]
+ref_t                   = 300			; reference temperature (This is likely to change for your system of interest) [K]
+
+; Pressure coupling
+pcoupl                  = C-rescale		; Exponential relaxation pressure coupling with time constant tau-p (This is a good general use barostat)
+pcoupltype              = isotropic		; uniform scaling of box vectors (Generally isotropic scaling should be used)
+tau_p                   = 10.0			; time constant (This can be changed if desired) [ps]
+ref_p                   = 1.0			; reference pressure (Can be changed based on the system of interest) [bar]
+compressibility         = 4.5e-5		; isothermal compressibility of water (Depends on the temperature and pressure of the system and the solvent used) [bar^-1]
+refcoord_scaling        = com
+
+; Periodic boundary conditions
+pbc                     = xyz			; 3-D Periodic Boundary Conditions (*Almost* always used)
+
+; Dispersion correction is not used for proteins with the C36 additive FF
+DispCorr                = EnerPres  		; apply long range dispersion corrections for Energy and Pressure (This is generally used)
+
+; Velocity generation
+gen_vel                 = no			; assign velocities from Maxwell distribution (This is only needed in the first equilibration)
