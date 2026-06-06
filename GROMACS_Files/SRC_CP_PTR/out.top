@@ -1,0 +1,29 @@
+[ defaults ]
+; nbfunc	comb-rule	gen-pairs	fudgeLJ	fudgeQQ
+     1	     2	yes   	0.500000	0.833333
+
+#include "out_atomtypes.itp"
+#include "out_Protein.itp"
+#include "out_Peptide.itp"
+#include "out_ATP.itp"
+#include "ions.itp"
+#include "tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+[ system ]
+;name
+FOO
+
+[ molecules ]
+;name	number
+Protein	1
+Peptide	1
+ATP	1
+MG	1
+
