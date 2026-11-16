@@ -1,0 +1,25 @@
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5          0.83333333  
+
+#include "out_atomtypes.itp"
+#include "out_Protein.itp"
+#include "out_Peptide.itp"
+#include "out_ATP.itp"
+#include "out_MG.itp"
+#include "out_XWAT.itp"
+#include "ions.itp"
+#include "tip3p.itp"
+
+[ system ]
+ABL_2QOH_DDEVHYAVPQF_2MG cluster 1 in water
+
+[ molecules ]
+Protein	1
+Peptide	1
+ATP	1
+MG	2
+XWAT	3
+SOL         16145
+NA               65
+CL               50

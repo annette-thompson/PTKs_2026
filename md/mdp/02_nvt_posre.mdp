@@ -1,0 +1,53 @@
+; NVT, solute heavy atoms restrained (1000), new velocities
+; written by workflows/Prep/mdps.py; edit that file, not this one
+
+; run
+define                  = -DPOSRES
+dt                      = 0.002
+nsteps                  = 50000
+continuation            = no
+
+; output
+nstlog                  = 2500
+nstenergy               = 2500
+nstxout-compressed      = 2500
+compressed-x-precision  = 1000
+
+; dynamics and temperature
+integrator              = md
+constraint-algorithm    = lincs
+constraints             = h-bonds
+lincs-iter              = 1
+lincs-order             = 4
+lincs-warnangle         = 30
+nstlist                 = 40
+comm-mode               = Linear
+nstcomm                 = 100
+tcoupl                  = v-rescale
+tc-grps                 = System
+tau-t                   = 2.0
+ref-t                   = 298
+ld-seed                 = -1
+
+; nonbonded
+cutoff-scheme           = Verlet
+pbc                     = xyz
+verlet-buffer-tolerance = 0.005
+coulombtype             = PME
+rcoulomb                = 1.0
+pme-order               = 4
+fourierspacing          = 0.12
+ewald-rtol              = 1e-5
+vdwtype                 = cut-off
+vdw-modifier            = potential-switch
+rvdw-switch             = 0.9
+rvdw                    = 1.0
+DispCorr                = EnerPres
+
+; pressure
+pcoupl                  = no
+
+; velocities
+gen-vel                 = yes
+gen-temp                = 298
+gen-seed                = -1

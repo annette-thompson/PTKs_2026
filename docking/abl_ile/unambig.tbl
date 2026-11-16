@@ -1,0 +1,11 @@
+assign (segid A and resid 602 and name "MG+2") (segid A and resid 381 and name OD1) 2.00 0.1 0.1
+assign (segid A and resid 602 and name "MG+2") (segid A and resid 381 and name OD2) 2.00 0.1 0.1
+assign (segid A and resid 602 and name "MG+2") (segid A and resid 601 and name O3G) 2.00 0.1 0.1
+assign (segid A and resid 602 and name "MG+2") (segid A and resid 601 and name O1B) 2.00 0.1 0.1
+assign (segid A and resid 602 and name "MG+2") (segid A and resid 604 and name O) 2.00 0.1 0.1
+assign (segid A and resid 602 and name "MG+2") (segid A and resid 605 and name O) 2.00 0.1 0.1
+assign (segid A and resid 603 and name "MG+2") (segid A and resid 368 and name OD1) 2.00 0.1 0.1
+assign (segid A and resid 603 and name "MG+2") (segid A and resid 381 and name OD2) 2.00 0.1 0.1
+assign (segid A and resid 603 and name "MG+2") (segid A and resid 601 and name O2G) 2.00 0.1 0.1
+assign (segid A and resid 603 and name "MG+2") (segid A and resid 601 and name O2A) 2.00 0.1 0.1
+assign (segid A and resid 603 and name "MG+2") (segid A and resid 606 and name O) 2.00 0.1 0.1

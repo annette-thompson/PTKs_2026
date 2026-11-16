@@ -1,0 +1,7 @@
+#ifndef POSRES_FC
+#define POSRES_FC 1000
+#endif
+
+[ position_restraints ]
+; ai funct fcx fcy fcz
+     1 1 POSRES_FC POSRES_FC POSRES_FC

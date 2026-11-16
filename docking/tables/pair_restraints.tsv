@@ -1,0 +1,21 @@
+position	abl_resid	structures	CA_min	CA_max	CA_median	CA_range	CB_min	CB_max	CB_median	CB_range	kind	atom	lower_A	upper_A
+P+1	399	14	7.36	10.08	7.77	2.72	7.78	10.65	8.620000000000001	2.87	backbone / backbone	CA	6.86	10.58
+P+1	400	18	4.26	5.51	4.895	1.25	4.15	7.37	5.9	3.22	backbone / backbone	CA	3.76	6.01
+P+1	401	20	5.06	5.77	5.425000000000001	0.71	5.08	7.38	6.345000000000001	2.3	backbone / backbone	CA	4.56	6.27
+P+1	403	13	6.31	7.23	6.64	0.92	4.66	6.33	5.23	1.67	side chain / side chain	CA	5.81	7.73
+P+1	445	17	6.06	8.2	7.53	2.14	4.05	5.42	4.72	1.37	side chain / side chain	CA	5.56	8.7
+P+2	399	18	4.97	7.31	5.56	2.34	5.15	7.87	6.26	2.72	backbone / backbone	CA	4.47	7.81
+P+2	400	12	4.03	4.89	4.3149999999999995	0.86	4.59	5.8	5.64	1.21	side chain / side chain	CA	3.53	5.39
+P+3	399	13	5.18	7.96	5.63	2.78	4.34	8.27	6.36	3.93	backbone / backbone	CA	4.68	8.46
+P+3	411	12	5.36	9.48	8.68	4.12	4.57	8.97	7.71	4.4	backbone / side chain	CA	4.86	9.98
+P-1	367	15	9.0	11.0	10.21	2.0	6.05	8.67	7.28	2.62	side chain / side chain	CA	8.5	11.5
+P-1	401	17	7.26	8.09	7.88	0.83	8.23	9.71	9.4	1.48	backbone / backbone	CA	6.76	8.59
+P-1	402	20	4.58	5.96	5.445	1.38	4.5	6.3	5.585	1.8	backbone / backbone	CA	4.08	6.46
+P-1	403	14	5.54	7.21	6.88	1.67	4.69	8.21	7.9	3.52	backbone / backbone	CA	5.04	7.71
+P-1	405	14	8.34	8.99	8.825	0.65	6.79	8.18	7.845	1.39	side chain / side chain	CA	7.84	9.49
+P0	363	15	9.69	10.26	10.12	0.57	8.41	9.15	8.86	0.74	side chain / side chain	CA	9.19	10.76
+P0	367	16	11.56	12.52	12.39	0.96	10.11	11.11	10.75	1.0	side chain / side chain	CA	11.06	13.02
+P0	368	11	12.78	13.4	13.19	0.62	11.38	11.95	11.77	0.57	side chain / side chain	CA	12.28	13.9
+P0	400	14	4.73	5.93	5.33	1.2	3.53	5.04	4.015000000000001	1.51	side chain / side chain	CA	4.23	6.43
+P0	401	19	4.37	5.2	4.88	0.83	5.89	6.77	6.19	0.88	backbone / backbone	CA	3.87	5.7
+P0	402	16	4.16	4.64	4.415	0.48	5.37	5.84	5.58	0.47	backbone / side chain	CA	3.66	5.14

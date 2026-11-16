@@ -1,0 +1,56 @@
+; NPT, restraints 1000
+; written by workflows/Prep/mdps.py; edit that file, not this one
+
+; run
+define                  = -DPOSRES
+dt                      = 0.003
+nsteps                  = 166667
+continuation            = yes
+
+; output
+nstlog                  = 1700
+nstenergy               = 1700
+nstxout-compressed      = 1700
+compressed-x-precision  = 1000
+
+; dynamics and temperature
+integrator              = md
+constraint-algorithm    = lincs
+constraints             = h-bonds
+lincs-iter              = 1
+lincs-order             = 4
+lincs-warnangle         = 30
+nstlist                 = 40
+comm-mode               = Linear
+nstcomm                 = 100
+tcoupl                  = v-rescale
+tc-grps                 = System
+tau-t                   = 2.0
+ref-t                   = 298
+ld-seed                 = -1
+
+; nonbonded
+cutoff-scheme           = Verlet
+pbc                     = xyz
+verlet-buffer-tolerance = 0.005
+coulombtype             = PME
+rcoulomb                = 1.0
+pme-order               = 4
+fourierspacing          = 0.12
+ewald-rtol              = 1e-5
+vdwtype                 = cut-off
+vdw-modifier            = potential-switch
+rvdw-switch             = 0.9
+rvdw                    = 1.0
+DispCorr                = EnerPres
+
+; pressure
+pcoupl                  = C-rescale
+pcoupltype              = isotropic
+tau-p                   = 5.0
+ref-p                   = 1.0
+compressibility         = 4.5e-5
+refcoord-scaling        = com
+
+; velocities
+gen-vel                 = no

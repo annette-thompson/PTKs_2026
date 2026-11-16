@@ -1,0 +1,28 @@
+system	haddock_cluster	rank	n	passing	best4	pick	fate	control
+Abl·Ile	1	1	204	9	-114.4	mdref_60	kept	mdref_27
+Abl·Ile	2	2	127	118	-90.6	mdref_192	kept	
+Abl·Ile	4	3	13	6	-64.2	mdref_259	kept	
+Abl·Ile	3	4	52	0	-58.9		no catalytic model	
+Abl·His	2	1	64	0	-115.5		no catalytic model	mdref_22
+Abl·His	3	2	60	30	-97.8	mdref_110	kept	
+Abl·His	5	3	30	10	-83.7	mdref_178	discarded	
+Abl·His	4	4	52	18	-75.6	mdref_45	discarded	
+Abl·His	6	5	20	5	-75.3	mdref_257	discarded	
+Abl·His	1	6	158	130	-60.3	mdref_75	discarded	
+Abl·His	7	7	8	0	-49.3		no catalytic model	
+Src·Ile	1	1	185	7	-105.3	mdref_48	kept	mdref_1
+Src·Ile	4	2	37	0	-95.2		no catalytic model	
+Src·Ile	3	3	53	19	-82.9	mdref_148	discarded	
+Src·Ile	7	4	11	8	-81.2	mdref_186	kept	
+Src·Ile	6	5	23	3	-71.6	mdref_273	kept	
+Src·Ile	5	6	26	0	-68.1		no catalytic model	
+Src·Ile	2	7	57	0	-60.3		no catalytic model	
+Src·His	1	1	196	2	-115.7	mdref_52	kept	mdref_21
+Src·His	5	2	25	0	-104.8		no catalytic model	
+Src·His	3	3	42	4	-103.6	mdref_250	kept	
+Src·His	2	4	65	0	-100.6		no catalytic model	
+Src·His	4	5	36	0	-89.4		no catalytic model	
+Src·His	7	6	13	0	-86.1		no catalytic model	
+Src·His	8	7	5	1	-78.6	mdref_350	kept	
+Src·His	9	8	4	0	-69.7		no catalytic model	
+Src·His	6	9	14	2	-52.6	mdref_344	discarded	

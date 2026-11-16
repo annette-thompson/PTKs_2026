@@ -1,0 +1,26 @@
+; Energy minimization (steepest descent)
+; written by workflows/Prep/mdps.py; edit that file, not this one
+
+; run
+integrator              = steep
+emtol                   = 500.0
+emstep                  = 0.01
+nsteps                  = 50000
+nstlog                  = 100
+nstenergy               = 100
+
+; nonbonded
+cutoff-scheme           = Verlet
+pbc                     = xyz
+verlet-buffer-tolerance = 0.005
+coulombtype             = PME
+rcoulomb                = 1.0
+pme-order               = 4
+fourierspacing          = 0.12
+ewald-rtol              = 1e-5
+vdwtype                 = cut-off
+vdw-modifier            = potential-switch
+rvdw-switch             = 0.9
+rvdw                    = 1.0
+DispCorr                = EnerPres
+nstlist                 = 1
